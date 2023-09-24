@@ -53,13 +53,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional
     public User show(Integer id) {
         return userRepository.getById(id);
     }
 
     @Override
-    @Transactional
     public List<User> listUsers() {
         return userRepository.findAll();
     }
