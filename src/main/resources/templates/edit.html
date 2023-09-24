@@ -17,8 +17,8 @@
 
     <label>
         <select multiple="multiple" th:field="*{roles}">
-            <option th:each="role: ${rolesOfUser}"
-                    th:value="${role}"
+            <option th:each="role: ${allRoles}"
+                    th:value="${role.id}"
                     th:text="${role.toString()}"></option>
         </select>
     </label>

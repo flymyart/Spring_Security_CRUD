@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<form th:method="POST" th:action="@{/admin}" th:object="${user}">
+<form th:method="POST" th:action = "@{/admin}" th:object="${user}">
     <label for="name">Enter name: </label>
     <input type="text" th:field="*{name}" id="name"/>
     <label for="age">Enter age: </label>
@@ -17,10 +17,9 @@
     <input type="text" th:field="*{password}" id="password"/>
     <label>
         <select multiple="multiple" th:field="*{roles}">
-            <option th:each="role: ${rolesOfUser}"
+            <option th:each="role: ${allRoles}"
                     th:value="${role.id}"
-                    th:text="${role}">
-            </option>
+                    th:text="${role.toString()}"></option>
         </select>
     </label>
 

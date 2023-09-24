@@ -26,7 +26,7 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "username")
+    @Column(unique = true, name = "username")
     private String username;
 
     @Column(name = "password")
@@ -45,13 +45,6 @@ public class User implements UserDetails {
     private List<Role> roles;
 
     public User() {
-    }
-
-    public User(String username, String password, String name, int age) {
-        this.username = username;
-        this.password = password;
-        this.name = name;
-        this.age = age;
     }
 
     public int getId() {
